@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <video autoplay loop muted playsinline class="vid">
+    <!-- <video autoplay loop muted playsinline class="vid">
       <source src="../assets/soccer_brokers.mp4" type="video/mp4">
-    </video>
+    </video> -->
     </div>
  
   
