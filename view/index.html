@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project</title>
+</head>
+<body>
+    <h2>Route description</h2>
+    <table>
+        <thead>
+            <th>Method</th>
+            <th>Path</th>
+            <th>Description</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>get</td>
+            <td>/</td>
+            <td>To render the home page(index.html)</td>
+        </tr>
+        <tr>
+            <td>get</td>
+            <td>/users</td>
+            <td>To get the users</td>
+        </tr>
+        <tr>
+            <td>get</td>
+            <td>/user/:id</td>
+            <td>To get the user by its id</td>
+        </tr>
+        <tr>
+            <td>get</td>
+            <td>/products</td>
+            <td>To retrieve all the products</td>
+        </tr>
+        <tr>
+            <td>get</td>
+            <td>/product/:id</td>
+            <td>To retrieve a certain product by specifying its id</td>
+        </tr>
+        <tr>
+            <td>post</td>
+            <td>/users(registration)</td>
+            <td>Route encrypts password,saves successfully in DB, and gives back a JWT to the front end.</td>
+        </tr>
+        <tr>
+            <td>put</td>
+            <td>/users/:id</td>
+            <td>Route updates successfully (including encrypting password if one is given)</td>
+        </tr>
+        <tr>
+            <td>post</td>
+            <td>/users/(login)</td>
+            <td>Route successfully checks for user in DB by email, and compares passwords correctly.JWT is sent back.</td>
+        </tr>
+        <tr>
+            <td>delete</td>
+            <td>/users/:id</td>
+            <td>Route updates successfully removes user from DB.</td>
+        </tr>
+        <tr>
+            <td>middleware</td>
+            <td>/products</td>
+            <td>All '/product' routes use middleware to make sure that only registered users with a token can see a product's details, or "view detail" on a product.</td>
+        </tr>
+        <tr>
+            <td>post</td>
+            <td>/products</td>
+            <td>Successfully saves product in DB.</td>
+        </tr>
+        <tr>
+            <td>put</td>
+            <td>/products/:id</td>
+            <td>Route updates successfully (can only update product of logged in user)</td>
+        </tr>
+        <tr>
+            <td>put</td>
+            <td>/users/:id</td>
+            <td>Route updates successfully (including encrypting password if one is given)</td>
+        </tr>
+        <tr>
+            <td>put</td>
+            <td>/users/:id</td>
+            <td>Route updates successfully (including encrypting password if one is given)</td>
+        </tr>
+        <tr>
+            <td>delete</td>
+            <td>/products/:id</td>
+            <td>Route updates successfully (can only delete product of logged in user)</td>
+        </tr>
+    </tbody>
+</body>
+</html>
