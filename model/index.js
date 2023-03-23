@@ -193,7 +193,8 @@ class User {
                 db.query(strQry,[req.body],
                     (err)=> {
                         if(err){
-                            res.status(400).json({err: "Unable to insert a new record."});
+                            res.status(400).json({err: "Unable to insert a new record."}),
+                            console.log(err);
                         }else {
                             res.status(200).json({msg: "Product saved"});
                         }
