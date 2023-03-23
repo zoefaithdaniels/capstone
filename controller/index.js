@@ -8,11 +8,11 @@ const product = new Product();
 
 route.get('^/&|/Capstone project', (req, res)=>{
     res.status(200).sendFile(path.join(__dirname, '../view/index.html'));
-})
+});
 
 route.post('/login', bodyParser.json(),(req, res)=>{
     user.login(req, res);
-})
+});
 
 route.get('/USERS', (req, res)=>{
     user.fetchUsers(req, res);
