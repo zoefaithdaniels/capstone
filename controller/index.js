@@ -11,7 +11,7 @@ route.get('^/&|/Capstone project', (req, res)=>{
 })
 
 route.post('/login', bodyParser.json(),(req, res)=>{
-    user.fetchUsers(req, res);
+    user.login(req, res);
 })
 
 route.get('/USERS', (req, res)=>{

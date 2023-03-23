@@ -16,7 +16,7 @@ class User {
         userRole,
         userProfile,
         joinDate
-        FROM USERS WHERE emailAdd = ${emailAdd}; 
+        FROM USERS WHERE emailAdd = '${emailAdd}'; 
         `
         db.query(strQry, async (err, data) => {
             if(err) throw err;
@@ -24,7 +24,7 @@ class User {
                 res.status(401).json({err: "invalid email address"});
             }else{
                 await compare(userPass, data[0].userPass, (cErr, cResult)=>{
-                if(cErr) throw cErr;
+                if(cErr) console.log(cErr);
                 // create token
                 const jwToken =  
                 createToken({emailAdd, userPass
