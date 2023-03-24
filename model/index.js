@@ -20,9 +20,11 @@ class User {
         `
         db.query(strQry, async (err, data) => {
             if(err) throw err;
-            if((!data) || (data == null)) {
+            if((!data) || (data[0] == undefined) || (data == null)) {
                 res.status(401).json({err: "invalid email address"});
             }else{
+                console.log(data)
+                console.log(err)
                 await compare(userPass, data[0].userPass, (cErr, cResult)=>{
                 if(cErr) console.log(cErr);
                 // create token
