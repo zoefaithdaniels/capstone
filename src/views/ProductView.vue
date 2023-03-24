@@ -73,6 +73,7 @@ import SpinnerComponent from "../components/SpinnerComponent.vue"
 }
 .btn{
     padding: 5px;
+    margin: 5px;
     
 }
 </style>
