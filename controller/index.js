@@ -2,8 +2,9 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const route = express.Router();
-const {User, Product} = require('../model/index.js');
+const {User, Product, Cart} = require('../model/index.js');
 const user = new User();
+const cart = new Cart();
 const product = new Product();
 
 route.get('^/&|/Capstone project', (req, res)=>{
@@ -51,6 +52,19 @@ route.put('/product/:id',bodyParser.json(),(req, res)=> {
 })
 route.delete('/product/:id',(req,res)=>{
     product.deleteProduct(req, res);
+})
+//cart
+route.get('/user/:id/carts',(req, res)=>{
+    cart.fetchItemCart(req,res);
+})
+route.post('/user/:id/cart',bodyParser.json(), (req, res)=>{
+    cart.addItemCart(req,res);
+})
+route.put('/user/:id/cart/:id', bodyParser.json(),(req, res)=>{
+    cart.updateItemCart(req,res);
+})
+route.delete('/user/:id/carts',(req, res)=>{
+    cart.deleteItemCart(req,res);
 })
 
 module.exports =route;
